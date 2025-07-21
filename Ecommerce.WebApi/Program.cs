@@ -15,7 +15,6 @@ builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddControllers();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
-builder.Services.AddValidatorsFromAssemblyContaining<Ecommerce.Application.Validators.CreateUserDtoValidator>();
 
 // Swagger detalhado
 builder.Services.AddEndpointsApiExplorer();
