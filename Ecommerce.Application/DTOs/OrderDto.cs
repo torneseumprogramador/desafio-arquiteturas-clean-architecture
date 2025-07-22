@@ -9,12 +9,12 @@ namespace Ecommerce.Application.DTOs
         public Guid UserId { get; set; }
         public DateTime CreatedAt { get; set; }
         public decimal Total { get; set; }
-        public List<OrderProductDto> Products { get; set; }
+        public List<OrderProductDto> Products { get; set; } = new();
     }
 
     public class CreateOrderDto
     {
         public Guid UserId { get; set; }
-        public List<CreateOrderProductDto> Products { get; set; }
+        public List<CreateOrderProductDto> Products { get; set; } = new();
     }
 } 

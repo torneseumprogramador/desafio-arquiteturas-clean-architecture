@@ -13,7 +13,7 @@ namespace Ecommerce.WebApi.Profiles
             CreateMap<Order, OrderDto>()
                 .ForMember(dest => dest.Products, opt => opt.MapFrom(src => src.OrderProducts));
             CreateMap<OrderProduct, OrderProductDto>()
-                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name));
+                .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product != null ? src.Product.Name : string.Empty));
 
             // ReverseMap para criação
             CreateMap<CreateUserDto, User>()
