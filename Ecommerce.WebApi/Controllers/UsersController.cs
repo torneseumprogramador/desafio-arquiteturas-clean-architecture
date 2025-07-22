@@ -18,6 +18,13 @@ namespace Ecommerce.WebApi.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<List<UserDto>>> GetAll([FromServices] Ecommerce.Domain.InterfacesRepository.IUserRepository repo)
+        {
+            var users = await repo.GetAllAsync();
+            return Ok(users.Select(u => new UserDto { Id = u.Id, Name = u.Name, Email = u.Email }).ToList());
+        }
+
         [HttpPost]
         public async Task<ActionResult<UserDto>> Create([FromBody] CreateUserDto dto)
         {

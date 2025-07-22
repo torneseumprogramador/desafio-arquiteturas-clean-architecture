@@ -86,6 +86,11 @@ case "${1:-}" in
     "help"|"-h"|"--help")
         show_help
         ;;
+    "console")
+        echo -e "${BLUE}🖥️ Executando ConsoleApp...${NC}"
+        check_dotnet
+        dotnet run --project Ecommerce.ConsoleApp
+        ;;
     "")
         echo -e "${BLUE}🚀 Iniciando Ecommerce Clean Architecture...${NC}"
         check_dotnet
