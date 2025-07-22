@@ -7,7 +7,7 @@ namespace Ecommerce.Domain.InterfacesRepository
 {
     public interface IOrderProductRepository
     {
-        Task<OrderProduct> GetByIdAsync(Guid orderId, Guid productId);
+        Task<OrderProduct?> GetByIdAsync(Guid orderId, Guid productId);
         Task<IEnumerable<OrderProduct>> GetByOrderIdAsync(Guid orderId);
         Task AddAsync(OrderProduct orderProduct);
         Task UpdateAsync(OrderProduct orderProduct);
