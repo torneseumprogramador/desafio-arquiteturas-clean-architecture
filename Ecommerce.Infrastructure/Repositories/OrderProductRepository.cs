@@ -28,7 +28,7 @@ namespace Ecommerce.Infrastructure.Repositories
             }
         }
 
-        public async Task<OrderProduct> GetByIdAsync(Guid orderId, Guid productId)
+        public async Task<OrderProduct?> GetByIdAsync(Guid orderId, Guid productId)
         {
             return await _context.OrderProducts.FindAsync(orderId, productId);
         }

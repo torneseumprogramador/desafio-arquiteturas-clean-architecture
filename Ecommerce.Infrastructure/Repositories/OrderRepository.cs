@@ -33,7 +33,7 @@ namespace Ecommerce.Infrastructure.Repositories
             return await _context.Orders.Include(o => o.OrderProducts).ToListAsync();
         }
 
-        public async Task<Order> GetByIdAsync(Guid id)
+        public async Task<Order?> GetByIdAsync(Guid id)
         {
             return await _context.Orders.Include(o => o.OrderProducts).FirstOrDefaultAsync(o => o.Id == id);
         }

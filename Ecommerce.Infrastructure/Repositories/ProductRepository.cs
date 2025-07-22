@@ -33,7 +33,7 @@ namespace Ecommerce.Infrastructure.Repositories
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<Product> GetByIdAsync(Guid id)
+        public async Task<Product?> GetByIdAsync(Guid id)
         {
             return await _context.Products.FindAsync(id);
         }

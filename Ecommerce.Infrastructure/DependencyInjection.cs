@@ -2,6 +2,8 @@ using Ecommerce.Domain.InterfacesRepository;
 using Ecommerce.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Ecommerce.Application.UseCases.Users;
+using Ecommerce.Application.UseCases.Orders;
 
 namespace Ecommerce.Infrastructure
 {
@@ -16,6 +18,11 @@ namespace Ecommerce.Infrastructure
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderProductRepository, OrderProductRepository>();
+
+            // UseCases
+            services.AddScoped<CreateUserUseCase>();
+            services.AddScoped<CreateOrderUseCase>();
+            services.AddScoped<AddProductToOrderUseCase>();
 
             return services;
         }
